@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h2>${episode.name}</h2>
             <span class="episode-code">${episodeCode}</span>
             <p>${episode.summary || "No summary available."}</p>
-            <a href="${episode.url}" target="_blank">More Info</a>
+            <a href="${episode.url}" target="_blank">Episode summary</a>
         `;
 
         container.appendChild(card);
