@@ -27,19 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = document.createElement("div");
         card.className = "episode-card";
 
-        // Episode code (e.g., S01E01)
+        // Generate episode code (e.g., S01E01)
         const episodeCode = `S${String(episode.season).padStart(2, "0")}E${String(
             episode.number
         ).padStart(2, "0")}`;
 
         card.innerHTML = `
-            <img src="${episode.image.medium}" alt="${episode.name}">
-            <h2>${episode.name} <span class="episode-code">(${episodeCode})</span></h2>
-            <p>${episode.summary}</p>
-            <p><a href="${episode.url}" target="_blank">More Info</a></p>
+            <img src="${episode.image.medium}" alt="Image of ${episode.name}">
+            <h2>${episode.name}</h2>
+            <span class="episode-code">${episodeCode}</span>
+            <p>${episode.summary || "No summary available."}</p>
+            <a href="${episode.url}" target="_blank">More Info</a>
         `;
 
         container.appendChild(card);
     });
 });
+
 
