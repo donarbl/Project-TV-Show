@@ -7,20 +7,21 @@ function padNumber(number) {
 
 // Generate HTML structure for an individual episode card
 function generateEpisodeHTML(episode) {
-  // Format the episode number as S01E01
   const episodeNumber = `S${padNumber(episode.season)}E${padNumber(episode.number)}`;
+  const imageUrl = episode.image ? episode.image.medium : 'placeholder-image-url.jpg';
+  const summary = episode.summary || 'No summary available';
 
-  // Return an HTML template string for the episode card
   return `
     <article class="episode-card">
-        <div class="episode-badge">${episodeNumber}</div>
-        <img src="${episode.image.medium}" alt="${episode.name}">
-        <div class="episode-content">
-            <h2>${episode.name}</h2>
-            <p>${episode.summary}</p>
-        </div>
+      <div class="episode-badge">${episodeNumber}</div>
+      <img src="${imageUrl}" alt="${episode.name}">
+      <div class="episode-content">
+        <h2>${episode.name}</h2>
+        <p>${summary}</p>
+      </div>
     </article>`;
 }
+
 
 // Render the list of episodes on the page
 function renderEpisodes(episodesToDisplay) {
