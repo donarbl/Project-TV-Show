@@ -85,10 +85,27 @@ function handleEpisodeSelection(event) {
 }
 
 // Set up the page once the DOM content is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-  allEpisodes = getAllEpisodes(); // Load all episodes using the helper function
-  renderEpisodes(allEpisodes); // Display all episodes initially
-  populateEpisodeSelector(); // Populate the dropdown with episodes
+document.addEventListener('DOMContentLoaded', async () => {
+  const episodesGrid = document.getElementById('episodes-grid');
+  const searchBox = document.getElementById('search-box');
+  const episodeSelector = document.getElementById('episode-selector');
+
+  // Show loading message
+  episodesGrid.innerHTML = '<p>Loading episodes...</p>';
+
+  try {
+    allEpisodes = await fetchEpisodes();
+    renderEpisodes(allEpisodes);
+    populateEpisodeSelector();
+
+    searchBox.addEventListener('input', filterEpisodes);
+    episodeSelector.addEventListener('change', handleEpisodeSelection);
+  } catch (error) {
+    episodesGrid.innerHTML = '<p>Error loading episodes. Please try again later.</p>';
+    console.error('Error:', error);
+  }
+});
+
 
   // Add an event listener for live search input
   const searchBox = document.getElementById('search-box');
