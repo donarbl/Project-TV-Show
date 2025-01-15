@@ -97,3 +97,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const episodeSelector = document.getElementById('episode-selector');
   episodeSelector.addEventListener('change', handleEpisodeSelection);
 });
+
+async function fetch episodes(){
+  const loadingMessage = document.getElementById('loading message');
+  loadingMessage.textContent = 'loading episodes...'
+  try {
+    const response = await fetch (''https://api.tvmaze.com/shows/82/episodes'');
+      if (!response.ok){
+        throw new Error ('Failed to fetch episodes.');
+      }
+      return await response.json();
+  } catch (error){
+    throw error;
+  }
+}
