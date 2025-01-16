@@ -2,17 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content=width=device-width, initial-scale=1" />
-    <meta name="description" content="Page on TV show">
-    <title>TV Show Project | Donara (donarbl is my github user name)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV Show Project | Pezhman Azizi (pezhman-azizi)</title>
     <link href="style.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
+
     <header>
       <div class="container">
           <h1>TV Series Episodes</h1>
+          <input type="text" id="search-box" placeholder="Search episodes..." />
+          <select id="episode-selector">
+            <option value="">Select an Episode</option>
+          </select>
+          <p id="search-result"></p>
       </div>
   </header>
 
@@ -28,7 +33,5 @@
       </div>
   </footer>
     <script src="script.js"></script>
-    <script src="episodes.js"></script>
   </body>
-
 </html>
