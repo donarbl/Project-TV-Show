@@ -33,7 +33,7 @@ header h1 {
 }
 
 /* Search Box */
-#search-box {
+#search-box, #show-selector {
   width: 100%;
   max-width: 400px;
   padding: 5px 5px;
