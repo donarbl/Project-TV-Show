@@ -65,7 +65,7 @@ function handleEpisodeSelection(event) {
 function fetchEpisodes() {
   const episodesGrid = document.getElementById('episodes-grid');
   episodesGrid.innerHTML = '<p>Loading episodes...</p>';
-  fetch('https://api.tvmaze.com/shows/82/episodes')
+  fetch('https://api.tvmaze.com/shows/')
     .then(response => {
       if (!response.ok) {
         throw new Error('Failed to fetch episodes');
