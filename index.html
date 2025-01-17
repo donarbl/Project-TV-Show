@@ -3,33 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TV Show Project |Donara Blanc (donarbl)</title>
+    <title>TV Show Project | Donara Blanc (donarbl)</title>
     <link href="style.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
-
-  <header>
-  <div class="container">
-    <h1>TV Series Episodes</h1>
-    <button id="back-to-shows" style="display:none;">Back to Shows</button>
-    <input type="text" id="search-shows" placeholder="Search shows..." />
-    <input type="text" id="search-episodes" placeholder="Search episodes..." style="display:none;" />
-    <select id="episode-selector" style="display:none;">
-      <option value="">Select an Episode</option>
-    </select>
-    <p id="search-result"></p>
-  </div>
-</header>
-
-<main class="container">
-  <div id="shows-grid" class="shows-grid"></div>
-  <div id="episodes-grid" class="episodes-grid" style="display:none;"></div>
-</main>
-<footer>
+  <body>
+    <header>
       <div class="container">
-      <p>&copy; 2024 TV Series Episodes. All rights reserved.</p>
+        <h1>TV Series Shows and Episodes</h1>
+        <input type="text" id="show-search" placeholder="Search shows..." />
+        <select id="show-selector">
+          <option value="">Select a Show</option>
+        </select>
+        <div id="episode-controls" style="display: none;">
+          <input type="text" id="episode-search" placeholder="Search episodes..." />
+          <select id="episode-selector">
+            <option value="">Select an Episode</option>
+          </select>
+          <p id="search-result"></p>
+          <button id="back-to-shows">Back to Shows</button>
+        </div>
       </div>
-  </footer>
+    </header>
+    <main class="container">
+      <div id="shows-grid" class="shows-grid"></div>
+      <div id="episodes-grid" class="episodes-grid" style="display: none;"></div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 TV Series Shows and Episodes. All rights reserved.</p>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
